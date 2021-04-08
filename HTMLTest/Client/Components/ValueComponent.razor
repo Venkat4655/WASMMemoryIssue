@@ -1,0 +1,33 @@
+﻿<h3>ValueComponent</h3>
+
+<div>
+
+    <table class="table">
+
+        <thead>
+
+            <HTMLHeader Headers="@HTMLHeaders"></HTMLHeader>
+
+        </thead>
+        <tbody>
+
+            <HTMLContent DataSource="@Data"></HTMLContent>
+
+        </tbody>
+
+    </table>
+
+</div>
+@code{
+
+    internal ElementReference Element { get; set; }
+
+    [Parameter]
+    public List<string> HTMLHeaders { get; set; }
+
+    [Parameter]
+    public IEnumerable<object> Data { get; set; }
+
+    [CascadingParameter]
+    HTMLGridComponent Parent { get; set; }
+}

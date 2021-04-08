@@ -1,0 +1,20 @@
+﻿@namespace HTMLTest.Client.Components
+
+<tr>
+    @foreach (var Header in Headers)
+    {
+        <th>
+            @Header
+        </th>
+    }
+</tr>
+
+@code {
+
+
+    [CascadingParameter]
+    HTMLGridComponent Parent { get; set; }
+
+    [Parameter]
+    public List<string> Headers { get; set; }
+}

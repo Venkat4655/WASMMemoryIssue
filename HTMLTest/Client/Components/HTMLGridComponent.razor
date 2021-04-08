@@ -1,0 +1,37 @@
+﻿@namespace HTMLTest.Client.Components
+@using System.Text.Json.Serialization;
+
+
+
+
+<div id="HTMLID" @ref="Element" tabindex="0" @onkeydown:stopPropagation="true">
+    <CascadingValue Value="@this">
+        @ChildContent
+        @*<HTMLGridComponent Headers="@HTMLHeaders" DataSource="@Data">
+            </HTMLGridComponent>*@
+        @*<HTMLTestDivComponent HTMLHeaders="@Headers" Data="@DataSource"></HTMLTestDivComponent>*@
+
+        <ValueComponent  HTMLHeaders="@Headers" Data="@DataSource" ></ValueComponent>
+    </CascadingValue>
+</div>
+
+@code {
+
+    [CascadingParameter]
+    HTMLGridComponent Parent { get; set; }
+
+    [Parameter]
+    public List<string> Headers { get; set; }
+
+    [Parameter]
+    public IEnumerable<object> DataSource { get; set; }
+
+
+    internal ElementReference Element { get; set; }
+
+
+
+    [Parameter]
+    [JsonIgnore]
+    public RenderFragment ChildContent { get; set; }
+}

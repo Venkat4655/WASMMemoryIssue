@@ -1,0 +1,27 @@
+﻿@namespace HTMLTest.Client.Components
+@using System.Reflection;
+
+<td>
+    @{
+        var prop1 = Data.GetType().GetProperty(PropertyInfo.Name);
+    }
+    @prop1.GetValue(Data, null)
+</td>
+
+
+@code {
+
+    [Parameter]
+    public PropertyInfo PropertyInfo { get; set; }
+
+    [Parameter]
+    public object Data { get; set; }
+
+    [CascadingParameter]
+    HTMLGridComponent Parent { get; set; }
+
+    private object GetValue()
+    {
+        return typeof(object);
+    }
+}

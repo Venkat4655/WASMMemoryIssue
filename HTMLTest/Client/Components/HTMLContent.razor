@@ -1,0 +1,37 @@
+﻿@namespace HTMLTest.Client.Components
+
+@foreach (var column in DataSource)
+{
+
+    <HTMLRow Data="@column"></HTMLRow>
+    @*<tr>
+            @{
+                var properties = column.GetType().GetProperties();
+                @foreach (var prop in properties)
+                {
+                    <td>
+                        @{
+                            var prop1 = column.GetType().GetProperty(prop.Name);
+                        }
+                        @prop1.GetValue(column, null)
+                    </td>
+
+                }
+            }
+
+        </tr>*@
+}
+
+@code {
+
+    [CascadingParameter]
+    HTMLGridComponent Parent { get; set; }
+
+    [Parameter]
+    public IEnumerable<object> DataSource { get; set; }
+
+    private object GetValue()
+    {
+        return typeof(object);
+    }
+}

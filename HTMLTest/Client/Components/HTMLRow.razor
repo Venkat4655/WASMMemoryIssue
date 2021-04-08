@@ -1,0 +1,34 @@
+﻿@namespace HTMLTest.Client.Components
+
+<tr>
+    @{
+        var properties = Data.GetType().GetProperties();
+        @foreach (var prop in properties)
+        {
+            <HTMLCell Data="@Data" PropertyInfo="@prop"></HTMLCell>
+            @*<td>
+                    @{
+                        var prop1 = Data.GetType().GetProperty(prop.Name);
+                    }
+                    @prop1.GetValue(Data, null)
+                </td>*@
+
+        }
+    }
+
+</tr>
+
+@code {
+
+    [CascadingParameter]
+    HTMLGridComponent Parent { get; set; }
+
+    [Parameter]
+    public object Data { get; set; }
+
+
+    private object GetValue()
+    {
+        return typeof(object);
+    }
+}
