@@ -2,24 +2,9 @@
 
 @foreach (var column in DataSource)
 {
-
+//tr rendering component
     <HTMLRow Data="@column"></HTMLRow>
-    @*<tr>
-            @{
-                var properties = column.GetType().GetProperties();
-                @foreach (var prop in properties)
-                {
-                    <td>
-                        @{
-                            var prop1 = column.GetType().GetProperty(prop.Name);
-                        }
-                        @prop1.GetValue(column, null)
-                    </td>
-
-                }
-            }
-
-        </tr>*@
+  
 }
 
 @code {

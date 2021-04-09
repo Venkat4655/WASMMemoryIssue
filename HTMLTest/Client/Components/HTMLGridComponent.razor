@@ -7,10 +7,6 @@
 <div id="HTMLID" @ref="Element" tabindex="0" @onkeydown:stopPropagation="true">
     <CascadingValue Value="@this">
         @ChildContent
-        @*<HTMLGridComponent Headers="@HTMLHeaders" DataSource="@Data">
-            </HTMLGridComponent>*@
-        @*<HTMLTestDivComponent HTMLHeaders="@Headers" Data="@DataSource"></HTMLTestDivComponent>*@
-
         <ValueComponent  HTMLHeaders="@Headers" Data="@DataSource" ></ValueComponent>
     </CascadingValue>
 </div>

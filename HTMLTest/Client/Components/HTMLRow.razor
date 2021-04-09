@@ -5,14 +5,8 @@
         var properties = Data.GetType().GetProperties();
         @foreach (var prop in properties)
         {
-            <HTMLCell Data="@Data" PropertyInfo="@prop"></HTMLCell>
-            @*<td>
-                    @{
-                        var prop1 = Data.GetType().GetProperty(prop.Name);
-                    }
-                    @prop1.GetValue(Data, null)
-                </td>*@
-
+		    //td rendering component
+            <HTMLCell Data="@Data" PropertyInfo="@prop"></HTMLCell>           
         }
     }
 
